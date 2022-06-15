@@ -1,6 +1,6 @@
 # CompGeo_Make_STL
 ## Objective
-Develop a simple web app/page to create and download STL files from any given multivariable (limit to 2 - x,y) mathematical expression.
+Develop a simple web app/page to create and download STL files from any user provided multivariable (limit to 2 - x,y) mathematical expression.
 - The mathematical expression represents a 3D surface, where x, y and result of the expression are 3 values representing cartesian co-ordinates in 3D space
 - For example, the expression (x-2)^2+(y-2)^2+2 represents the following surface...
 ![image](https://user-images.githubusercontent.com/91622575/172967186-0d411590-662e-4344-8a23-33286d679915.png)
