@@ -15,7 +15,7 @@ The program will operate and be used as described below...
 - User should be able to enter any two variable expression, such as `(x-2)^2+(y-2)^2+2`.
 - The program should understand and support various mathematical operations, including addition, subtraction, multiplication, division and power function, including fractional values for root functions. Support for additional mathematical operations - exponent, trignometric functions, etc. may be added for a bonus.
 - Once the desired expression is entered, clicking the 'Generate STL' button should begin the process of generating and displaying corresponding STL.
-  * The program will process the expression to generate a point cloud with sufficient granularity so it fairly represents details of the geometry.
+  * The program will parse and process the expression to generate a point cloud with sufficient granularity so it fairly represents details of the geometry.
   * The extents/limits of the point cloud should be sufficient to fairly represent details of the geometry.
   * Convert the point cloud into a STL mesh.
   * The STL mesh will then be rendered in the display window.
