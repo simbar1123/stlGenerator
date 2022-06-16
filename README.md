@@ -12,7 +12,7 @@ The web page will have the following visual elements...
 - Another button to download the STL file generated above ('Download' button)
 ## Operation
 The program will operate and be used as described below...
-- User should be able to enter a 2 variable expression, such as (x-2)^2+(y-2)^2+2
+- User should be able to enter any 2 variable expression, such as `(x-2)^2+(y-2)^2+2`
 - The program should understand and support various mathematical operations, including addition, subtraction, multiplication, division and power function, including fractional values for root functions. 
 - Once the desired expression is entered, the 'Generate STL' button should begin the process of generating and displaying corresponding STL.
   * The program will process the expression to generate a point cloud with sufficient granularity so it fairly represents details of the geometry.
