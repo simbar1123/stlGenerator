@@ -6,10 +6,10 @@ Develop a simple web app/page to create and download STL files from any user pro
 ![image](https://user-images.githubusercontent.com/91622575/172967186-0d411590-662e-4344-8a23-33286d679915.png)
 ## Web Interface
 The web page will have the following visual elements...
-- A field for the user to enter a mathematical expression ('Function entry' field)
+- A field for the user to enter a mathematical expression ('Function entry')
 - A button to begin the process of generating the STL file after user enters the expression above ('Generate STL')
 - Window/Region to display a 3D shape in the STL just generated
-- Another button to download the STL file generated above ('Download' button)
+- Another button to download the STL file generated above ('Download')
 ## Operation
 The program will operate and be used as described below...
 - User should be able to enter any two variable expression, such as `(x-2)^2+(y-2)^2+2`
