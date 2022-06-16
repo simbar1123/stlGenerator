@@ -1,6 +1,6 @@
 # CompGeo_Make_STL
 ## Objective
-Develop a simple web app/page to create and download STL files for any user provided multivariable (limit to 2: x, y) mathematical expression.
+Develop a simple web app/page to generate and download STL files for any user provided multivariable (limit to 2: x, y) mathematical expression.
 - The mathematical expression represents a 3D surface, where x, y and result of the expression, are 3 values representing cartesian co-ordinates in 3D space
 - For example, the expression (x-2)^2+(y-2)^2+2 represents the following surface...
 ![image](https://user-images.githubusercontent.com/91622575/172967186-0d411590-662e-4344-8a23-33286d679915.png)
@@ -12,14 +12,14 @@ The web page will have the following visual elements...
 - Another button to download the STL file generated above ('Download').
 ## Operation
 The program will operate and be used as described below...
-- User should be able to enter any two variable expression, such as `(x-2)^2+(y-2)^2+2`.
-- The program should understand and support various mathematical operations, including addition, subtraction, multiplication, division and power function, including fractional values for root functions. Support for additional mathematical operations - exponent, trignometric functions, etc. may be added for a bonus.
+- User should be able to enter any 2-variable expression, such as `(x-2)^2+(y-2)^2+2`.
+- The program should understand and support various mathematical operations, including addition, subtraction, multiplication, division and power function, including fractional values for root functions. *Support for additional mathematical operations - exponent, trignometric functions, etc. may be added for a bonus.*
 - Once the desired expression is entered, clicking the 'Generate STL' button should begin the process of generating and displaying corresponding STL.
-  * The program will parse and process the expression to generate a point cloud with sufficient granularity so it fairly represents details of the geometry.
-  * The extents/limits of the point cloud should be sufficient to fairly represent details of the geometry.
+  * The program will parse and process the expression to generate a point cloud. 
+  * The extents/limits of the point cloud as well as its granularity should be sufficient to fairly represent details of the geometry.
   * Convert the point cloud into a STL mesh.
   * The STL mesh will then be rendered in the display window.
-  * (For a bonus, the app may include additional visual elements to control the size and granularity of the mesh)
+  * *For a bonus, the app may include additional visual elements for the user to control the size and granularity of resulting mesh. Re-rendering, following adjustments, may happen dynamically or in response to a button click.*
 - Once generated, the user can click the 'Download' button to cause the generated STL to be downloaded.
 ## Requirements
 - The app may be developed using any framework/programming language the user is comfortable with (although Python is our preferred language).
