@@ -2,6 +2,8 @@
 ## Executable/Web app Location
 The app is located [here](https://stlgenerator.anvil.app)
 
+**If upon pressing either of the buttons you receive 'uplink error', please send me an email, this happens as my drive forcefully disconnects from the web app on some regular time intervals**
+
 Upon entering the app, you will be prompted to enter the following 7 fields:
 1. Function: the function you wish to render, must be written in proper numpy syntax
 2. X minimum: edge of rectangular domain 
