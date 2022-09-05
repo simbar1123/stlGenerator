@@ -2,8 +2,6 @@
 ## Executable/Web app Location
 The app is located [here](https://stlgenerator.anvil.app)
 
-**If upon pressing either of the buttons you receive 'uplink error', please send me an email, this happens as my drive forcefully disconnects from the web app on some regular time intervals**
-
 Upon entering the app, you will be prompted to enter the following 7 fields:
 1. Function: the function you wish to render, must be written in proper numpy syntax
 2. X minimum: edge of rectangular domain 
@@ -13,11 +11,12 @@ Upon entering the app, you will be prompted to enter the following 7 fields:
 6. Number of points y: number of equispaced subdivisions in y direction
 7. Number of points x: number of equispace subdivisions in x direction
 
-**Note that the function must be written in proper python syntax**, I recommend trying np.sin(x)+np.sin(y), using something like -10 to 10 for both axes and around 100 points each direction.  Function also must be well defined on entered domain.
+**Note that the function must be written in proper python syntax using numpy as np**, I recommend trying np.sin(x)+np.sin(y), using something like -10 to 10 for both axes and around 100 points each direction.  Function also must be well defined on entered domain.  Any numpy function can be used as np.function.
 
-Pressing View 3d Point Cloud will display two views of the 3 dimensional point cloud used to generate the stl file
+Pressing View 3d Point Cloud will display two views of the 3 dimensional point cloud used to generate the stl file (this may display an error banner at some times but ignore that for now, it still works regardless)
 
-Pressing Download STL will generate and download the stl file
+
+Pressing Download STL will generate and download the stl file, this takes like 15 seconds as explained later in this readme.
 
 
 ## Back end
