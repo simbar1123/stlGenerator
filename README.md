@@ -29,7 +29,7 @@ I wrote the back end of this code in a jupyter notebook via google colab.  It wo
 5. b) If downloading Stl, generate mesh via ball pivoting
 6. Upload file to google drive folder to be exported via app, delete old copy of file.
 
-A thing to note: because this process involves uploading and downloading from drive, it takes some time. Towards the end of the function downloadSTL, you will find two calls to time.sleep(7).  Depending on your internet connection speed, it may be nescessary to have increased these times in order to download the correct files.  What time works best has varied for me depending on which device I've been editing on.  Too small of a time here will result in downloading whatever file was generated previously. **If you find that incorrect files are being downloaded or you receive a fatal server uplink error, please let me know and I will regenerate the web app with accordingly.**
+A thing to note: because this process involves uploading and downloading from drive, it takes some time. Towards the end of the function downloadSTL, you will find two calls to time.sleep(7).  Depending on your internet connection speed, it may be nescessary to have increased these times in order to download the correct files.  What time works best has varied for me depending on which device I've been editing on.  Too small of a time here will result in downloading whatever file was generated previously. **If you find that incorrect files are being downloaded or you receive a fatal server uplink error, please let me know and I will regenerate the web app accordingly.**
 
 More detail of exactly what I'm doing is found in comments, please feel free to reach out if there are questions
 ## Front End
