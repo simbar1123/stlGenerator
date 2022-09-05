@@ -41,6 +41,7 @@ I created 7 text box inputs, one image, and two buttons.  All of these are fairl
 There are a couple of changes I would try to make to this code if I wasn't already preoccupied by my current job, classes, and qualifying exams.
 1. use poisson reconstruction instead of ball pivoting
 2. figure out how to get files without need for google drive to speed up process
-3. offer ways to discretize domain that aren't always equispaced 
+3. display an interactable 3d plot of the stl instead of multiple 2d images (I generated the object within python don't think it can be displayed with anvil)
+4. offer ways to discretize domain that aren't always equispaced 
 
 I enjoyed this project, and appreciate you all taking the time to consider me as an employee. I hope to hear back from you soon.
