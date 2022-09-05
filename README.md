@@ -1,41 +1,46 @@
-# CompGeo_Make_STL
-## Objective
-Develop a simple web app/page to generate and download STL files for any user provided multivariable (limit to 2: x, y) mathematical expression.
-- The mathematical expression represents a 3D surface, where x, y and result of the expression, are 3 values representing cartesian co-ordinates in 3D space
-- For example, the expression (x-2)^2+(y-2)^2+2 represents the following surface...
-![image](https://user-images.githubusercontent.com/91622575/172967186-0d411590-662e-4344-8a23-33286d679915.png)
-## Web Interface
-The web page will have the following visual elements...
-- A field for the user to enter a mathematical expression ('Function entry').
-- A button to begin the process of generating the STL file after user enters the expression above ('Generate STL').
-- Window/Region to display a 3D shape in the STL just generated.
-- Another button to download the STL file generated above ('Download').
-## Operation
-The program will operate and be used as described below...
-- User should be able to enter any 2-variable expression, such as `(x-2)^2+(y-2)^2+2`.
-- The program should understand and support various mathematical operations, including addition, subtraction, multiplication, division and power function, including fractional values for root functions. *Support for additional mathematical operations - exponent, trignometric functions, etc. may be added for a bonus.*
-- Once the desired expression is entered, clicking the 'Generate STL' button should begin the process of generating and displaying corresponding STL.
-  * The program will parse and process the expression to generate a point cloud. 
-  * The extents/limits of the point cloud as well as its granularity should be sufficient to fairly represent details of the geometry.
-  * Convert the point cloud into a STL mesh.
-  * The STL mesh will then be rendered in the display window.
-  * *For a bonus, the app may include additional visual elements for the user to control the size and granularity of resulting mesh. Re-rendering, following adjustments, may happen dynamically or in response to a button click.*
-- Once generated, the user can click the 'Download' button to cause the generated STL to be downloaded.
-## Requirements
-- The app may be developed using any framework/programming language the user is comfortable with (although Python is our preferred language).
-- The deliverables must include documentation and all artifacts necessary to deploy and run the application.
-- To enable review, deliverables must include code - not just executables. And per good programming practices, be sufficiently documented for ease of understanding.
-## Submission
-In order to submit the assignment, do the following:
+# STL Generator
+## Executable/Web app Location
+The app is located [here](https://stlgenerator.anvil.app)
 
-1. Navigate to GitHub's project import page: [https://github.com/new/import](https://github.com/new/import)
+Upon entering the app, you will be prompted to enter the following 7 fields:
+1. Function: the function you wish to render, must be written in proper numpy syntax
+2. X minimum: edge of rectangular domain 
+3. X maximum: edge of rectangular domain
+4. Y minimum: edge of rectangular domain
+5. Y maximum: edge of rectangular domain
+6. Number of points y: number of equispaced subdivisions in y direction
+7. Number of points x: number of equispace subdivisions in x direction
 
-2. In the box titled "Your old repository's clone URL", paste the homework repository's link: [https://github.com/Machina-Labs/CompGeo_Make_STL](https://github.com/Machina-Labs/CompGeo_Make_STL)
+**Note that the function must be written in proper python syntax**, I recommend trying np.sin(x)+np.sin(y), using something like -10 to 10 for both axes and around 100 points each direction.  Function also must be well defined on entered domain.
 
-3. In the box titled "Repository Name", add a name for your local homework (ex. `Make_STL_soln`)
+Pressing View 3d Point Cloud will display two views of the 3 dimensional point cloud used to generate the stl file
 
-4. Set privacy level to "Public", then click "Begin Import" button at bottom of the page.
+Pressing Download STL will generate and download the stl file
 
-5. Develop your homework solution in the cloned repository and push it to Github when you're done. Extra points for good Git hygiene.
 
-6. Send us the link to your repository.
+## Back end
+I wrote the back end of this code in a jupyter notebook via google colab.  It works roughly as follows:
+1. Generate function that evaluates string function input
+2. Create Lattice of XY plane according to specified bounds/number of subdivisions
+3. Evaluate all points in lattice w/ function 
+4. Using open3d library, generate point cloud and normals 
+5. a) If displaying point cloud, create plot and send as image to front end. End of function.
+5. b) If downloading Stl, generate mesh via ball pivoting
+6. Upload file to google drive folder to be exported via app, delete old copy of file.
+
+A thing to note: because this process involves uploading and downloading from drive, it takes some time. Towards the end of the function downloadSTL, you will find two calls to time.sleep(7).  Depending on your internet connection speed, it may be nescessary to have increased these times in order to download the correct files.  What time works best has varied for me depending on which device I've been editing on.  Too small of a time here will result in downloading whatever file was generated previously. **If you find that incorrect files are being downloaded, please let me know and I will regenerate the web app with a larger sleep time.**
+
+More detail of exactly what I'm doing is found in comments, please feel free to reach out if there are questions
+## Front End
+To be completely honest, I do not have much if any front end experience, and thus if front end is a significant part of the computational geometry roll, I think you would do better with a different candidate.  I had never built a web app before, so this is all stuff that I learned over the span of about two days, so please bare with me if it isn't the most beautiful app.
+
+The front end is written in Anvil, which is new to me but fairly intuitive to learn.
+I created 7 text box inputs, one image, and two buttons.  All of these are fairly intuitive, the buttons used to generate the stl/images simply take the textbox fields and send them as input to the backend functions.  I am uploading some of the code used to run the button functions, but if you wanted to actually build the app again instead of just looking at the code attached, you will need more information than what is provided as it interfaces directly with my google drive.
+
+## Thoughts
+There are a couple of changes I would try to make to this code if I wasn't already preoccupied by my current job, classes, and qualifying exams.
+1. use poisson reconstruction instead of ball pivoting
+2. figure out how to get files without need for google drive to speed up process
+3. offer ways to discretize domain that aren't always equispaced 
+
+I enjoyed this project, and appreciate you all taking the time to consider me as an employee. I hope to hear back from you soon.
