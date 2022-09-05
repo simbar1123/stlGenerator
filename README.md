@@ -9,7 +9,7 @@ Upon entering the app, you will be prompted to enter the following 7 fields:
 4. Y minimum: edge of rectangular domain
 5. Y maximum: edge of rectangular domain
 6. Number of points y: number of equispaced subdivisions in y direction
-7. Number of points x: number of equispace subdivisions in x direction
+7. Number of points x: number of equispaced subdivisions in x direction
 
 **Note that the function must be written in proper python syntax using numpy as np**, I recommend trying np.sin(x)+np.sin(y), using something like -10 to 10 for both axes and around 100 points each direction.  Function also must be well defined on entered domain.  Any numpy function can be used as np.function.
 
@@ -29,7 +29,7 @@ I wrote the back end of this code in a jupyter notebook via google colab.  It wo
 5. b) If downloading Stl, generate mesh via ball pivoting
 6. Upload file to google drive folder to be exported via app, delete old copy of file.
 
-A thing to note: because this process involves uploading and downloading from drive, it takes some time. Towards the end of the function downloadSTL, you will find two calls to time.sleep(7).  Depending on your internet connection speed, it may be nescessary to have increased these times in order to download the correct files.  What time works best has varied for me depending on which device I've been editing on.  Too small of a time here will result in downloading whatever file was generated previously. **If you find that incorrect files are being downloaded, please let me know and I will regenerate the web app with a larger sleep time.**
+A thing to note: because this process involves uploading and downloading from drive, it takes some time. Towards the end of the function downloadSTL, you will find two calls to time.sleep(7).  Depending on your internet connection speed, it may be nescessary to have increased these times in order to download the correct files.  What time works best has varied for me depending on which device I've been editing on.  Too small of a time here will result in downloading whatever file was generated previously. **If you find that incorrect files are being downloaded or you receive a fatal server uplink error, please let me know and I will regenerate the web app with accordingly.**
 
 More detail of exactly what I'm doing is found in comments, please feel free to reach out if there are questions
 ## Front End
