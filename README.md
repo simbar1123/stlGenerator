@@ -2,6 +2,10 @@
 ## Web app Location/Instructions
 The app is located [here](https://stlgenerator.anvil.app)
 
+
+#app is currently turned off, let me know if you want it turned back on
+
+
 Upon entering the app, you will be prompted to enter the following 7 fields:
 1. Function: the function you wish to render, must be written in proper numpy syntax
 2. X minimum: edge of rectangular domain 
